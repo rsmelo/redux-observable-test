@@ -3,5 +3,15 @@ const initialState = {
 }
 
 export default function app(state = initialState, action) {
-  return state
+  switch (action.type) {
+    case 'SET_NAME': {
+      return {
+        ...state,
+        name: action.payload,
+      }
+    }
+    default: {
+      return state
+    }
+  }
 }
